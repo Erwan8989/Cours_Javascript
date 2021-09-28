@@ -151,27 +151,56 @@
 
 
 
-let compteur1 = 0
-let compteur2 = 0
+// let compteur1 = 0
+// let compteur2 = 0
 
 
 
-let b1 = document.querySelector(".rouge")
-b1.addEventListener("click", function () {
-    plus()
+// let b1 = document.querySelector(".rouge")
+// b1.addEventListener("click", function () {
+//     plus()
+// })
+
+// function plus() {
+//     compteur1++
+//     A.innerHTML = compteur1
+// }
+
+// let b2 = document.querySelector(".bleu")
+// b2.addEventListener("click", function () {
+//     Plus()
+// })
+
+// function Plus() {
+//     compteur2++
+//     B.innerHTML = compteur2
+// }
+
+
+let compteur1 = 0,
+    compteur2 = 0
+
+let score1 = document.querySelector(".A")
+let score2 = document.querySelector(".B")
+
+let plusun = document.querySelector(".rouge")
+let plusdeux = document.querySelector(".bleu")
+
+plusun.addEventListener("click", function () {
+    plus1()
 })
 
-function plus() {
+function plus1() {
     compteur1++
-    A.innerHTML = compteur1
+    score1.innerHTML = compteur1
 }
 
-let b2 = document.querySelector(".bleu")
-b2.addEventListener("click", function () {
-    Plus()
+
+plusdeux.addEventListener("click", function () {
+    plus2()
 })
 
-function Plus() {
+function plus2() {
     compteur2++
-    B.innerHTML = compteur2
+    score2.innerHTML = compteur2
 }
