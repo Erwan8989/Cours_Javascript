@@ -47,7 +47,7 @@
 
 // while (age != nm) {
 // age = prompt("Quel est le nombre mystère ?")
-    
+
 // if (age == nm) {
 //   alert ("Brave, tu as trouvé en " + compteur + " coup ! ")
 // }
@@ -74,7 +74,7 @@
 // while(devinette != age){
 
 //     devinette = prompt("Essayez de deviner l'age de ma célébrité")
-    
+
 //     if(devinette > age){
 //         alert("L'age saisi est trop élevé")
 //         i = i + 1
@@ -123,11 +123,42 @@
 
 
 
+// function Conversion(Fahrenheit) {
+//     let conversion = (Fahrenheit - 32) * 5 / 9
+//     return conversion
+// }
 
-function Conversion (Fahrenheit) {
-let conversion = (Fahrenheit - 32) * 5/9
-return conversion 
-}
+// let ValeurConvertit = (Conversion(70))
+// console.log(ValeurConvertit)
 
-let ValeurConvertit = (Conversion (70))
-console.log(ValeurConvertit)
+// let F = prompt("Entrez le degré Fahrenheit que vous souhaitez convertir")
+
+// function Convertion(F) {
+//     let degré = (F - 32) * 5 / 9
+//     return degré
+// }
+
+// let C = Convertion(F)
+// console.log("Le dégré " + F + " Fahrenheit est égal à " + C + " degré Celsus")
+
+// ********************************* Chnagement d'élément html et css en JavaScript  **********************************
+
+
+// let ma_balise_p = document.querySelector(".MonTexte")
+// ma_balise_p.innerHTML = "Coucou"
+// ma_balise_p.style.color = "red"
+// ma_balise_p.style.fontSize = "30px"
+
+
+
+let compteur1 = 0
+let compteur2 = 0
+
+
+
+
+
+let bouton = document.querySelector(".rouge")
+bouton.addEventListener("click", function () {
+    alert(i + 1)
+})
