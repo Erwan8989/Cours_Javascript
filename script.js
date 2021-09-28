@@ -87,23 +87,23 @@
 
 let compteur1 = 0,
   compteur2 = 0
-let plus = document.querySelector(".plus")
-let plus2 = document.querySelector(".moins")
+let plusun = document.querySelector(".1")
+let plusdeux = document.querySelector(".2")
 
-plus.addEventListener("click", function () {
+plusun.addEventListener("click", function () {
   plus1()
 })
 
 function plus1() {
   compteur1++
-  document.write(compteur2)
+  plusun.innerHTML = compteur1
 }
 
-plus2.addEventListener("click", function () {
-  moins1()
+plusdeux.addEventListener("click", function () {
+  plus2()
 })
 
 function plus2() {
   compteur2++
-  document.write(compteur2)
+  plusdeux.innerHTML = compteur2
 }
