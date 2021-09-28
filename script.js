@@ -156,9 +156,22 @@ let compteur2 = 0
 
 
 
-
-
-let bouton = document.querySelector(".rouge")
-bouton.addEventListener("click", function () {
-    alert(i + 1)
+let b1 = document.querySelector(".rouge")
+b1.addEventListener("click", function () {
+    plus()
 })
+
+function plus() {
+    compteur1++
+    A.innerHTML = compteur1
+}
+
+let b2 = document.querySelector(".bleu")
+b2.addEventListener("click", function () {
+    Plus()
+})
+
+function Plus() {
+    compteur2++
+    B.innerHTML = compteur2
+}
