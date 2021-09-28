@@ -36,7 +36,7 @@
 // let coup = 1
 
 // alert("Devinez le chiffre entre 0 et 100")
-    
+
 // while (age != age_entree) {
 //     age_entree = prompt("Entrez une valeur")
 
@@ -54,14 +54,56 @@
 // }
 
 
-// ************************* Exercice Fahrenheit en dégré celsius *************************
+// // ************************* Exercice Fahrenheit en dégré celsius *************************
 
-function convertir(nombre1){
-    let result = (nombre1-32)*5/9
+// function convertir(nombre1) {
+//   let result = (nombre1 - 32) * 5 / 9
+//   return result
+// }
 
-    return result
+// let degré = prompt("Entrez une valeur en Fahrenheit, elle sera convertit en dégré celsius")
+
+// console.log(convertir(degré))
+
+
+
+// let balise = document.querySelector(".text")
+// let prenom = "John"
+
+
+// balise.innerHTML = "Coucou " + prenom
+// balise.style.color = "red"
+// balise.style.fontSize = "30px"
+
+
+// let bouton = document.querySelector(".bouton1")
+// bouton.addEventListener("click", function () {
+//   monAction()
+// })
+
+// function monAction() {
+//   bouton.style.color = "red"
+// }
+
+let compteur1 = 0,
+  compteur2 = 0
+let plus = document.querySelector(".plus")
+let plus2 = document.querySelector(".moins")
+
+plus.addEventListener("click", function () {
+  plus1()
+})
+
+function plus1() {
+  compteur1++
+  document.write(compteur2)
 }
 
-let degré = prompt("Entrez une valeur en Fahrenheit, elle sera convertit en dégré celsius")
+plus2.addEventListener("click", function () {
+  moins1()
+})
 
-alert (convertir(degré))
+function plus2() {
+  compteur2++
+  document.write(compteur2)
+}
