@@ -87,8 +87,12 @@
 
 let compteur1 = 0,
   compteur2 = 0
-let plusun = document.querySelector(".1")
-let plusdeux = document.querySelector(".2")
+
+let score1 = document.querySelector(".score1")
+let score2 = document.querySelector(".score2")
+
+let plusun = document.querySelector(".plus")
+let plusdeux = document.querySelector(".plus2")
 
 plusun.addEventListener("click", function () {
   plus1()
@@ -96,8 +100,10 @@ plusun.addEventListener("click", function () {
 
 function plus1() {
   compteur1++
-  plusun.innerHTML = compteur1
+  score1.innerHTML = compteur1
 }
+
+
 
 plusdeux.addEventListener("click", function () {
   plus2()
@@ -105,5 +111,5 @@ plusdeux.addEventListener("click", function () {
 
 function plus2() {
   compteur2++
-  plusdeux.innerHTML = compteur2
+  score2.innerHTML = compteur2
 }
