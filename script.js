@@ -154,10 +154,13 @@
 // let compteur1 = 0
 // let compteur2 = 0
 
+// let score1 = document.querySelector(".A")
+// let score2 = document.querySelector(".B")
 
-
+// let b2 = document.querySelector(".bleu")
 // let b1 = document.querySelector(".rouge")
-// b1.addEventListener("click", function () {
+
+// b2.addEventListener("click", function () {
 //     plus()
 // })
 
@@ -166,8 +169,7 @@
 //     A.innerHTML = compteur1
 // }
 
-// let b2 = document.querySelector(".bleu")
-// b2.addEventListener("click", function () {
+// b1.addEventListener("click", function () {
 //     Plus()
 // })
 
