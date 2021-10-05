@@ -247,4 +247,20 @@ switch1.addEventListener("click", function () {
 })
 
 
+let monInput = document.querySelector(".monInput")
+let monBouton = document.querySelector(".monBouton")
+let maListe = document.querySelector(".maListe")
+monBouton.addEventListener("click", function () {
+    MonAction()
+})
+
+function MonAction() {
+    let element = document.createElement("li")
+    element.className = "monElement"
+    element.innerHTML = monInput.value
+    maListe.appendChild(element)
+    monInput.value = ""
+}
+
+
 // ********************************* Changement d'élément html et css en JavaScript  *********************************
