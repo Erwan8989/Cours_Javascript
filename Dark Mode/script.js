@@ -23,6 +23,4 @@ switch1.addEventListener("click", function () {
     body.classList.add("light")
     body.classList.remove("dark")
   }
-
-
 })
