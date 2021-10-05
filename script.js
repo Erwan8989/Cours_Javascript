@@ -38,7 +38,7 @@
 // let age = prompt("Saisissez votre âge")
 // alert ("vous avez " + age + " ans")
 
-// ********************************* Exo 2 ***********************************
+// ******************************************* Exo 2 ***********************************************
 
 
 // let nm = 53
@@ -63,7 +63,7 @@
 // }
 
 
-// ******************************** V2 *********************************
+// // ******************************************* Exo 2 ***********************************************
 
 
 // let devinette
@@ -131,6 +131,9 @@
 // let ValeurConvertit = (Conversion(70))
 // console.log(ValeurConvertit)
 
+// ******************************************* V2 ***********************************************
+
+
 // let F = prompt("Entrez le degré Fahrenheit que vous souhaitez convertir")
 
 // function Convertion(F) {
@@ -141,7 +144,8 @@
 // let C = Convertion(F)
 // console.log("Le dégré " + F + " Fahrenheit est égal à " + C + " degré Celsus")
 
-// ********************************* Chnagement d'élément html et css en JavaScript  **********************************
+
+// ********************************* Changement d'élément html et css en JavaScript  **********************************
 
 
 // let ma_balise_p = document.querySelector(".MonTexte")
@@ -179,30 +183,61 @@
 // }
 
 
-let compteur1 = 0,
-    compteur2 = 0
+var white = "#FFFFFF";
+var black = "#000000";
 
-let score1 = document.querySelector(".A")
-let score2 = document.querySelector(".B")
+let score_txt = document.querySelector(".score")
+let bouton1 = document.querySelector(".Bouton1")
+let bouton2 = document.querySelector(".Bouton2")
 
-let plusun = document.querySelector(".rouge")
-let plusdeux = document.querySelector(".bleu")
+let score_1 = 0
+let score_2 = 0
 
-plusun.addEventListener("click", function () {
-    plus1()
+bouton1.addEventListener("click", function () {
+    incrementScore1()
 })
 
-function plus1() {
-    compteur1++
-    score1.innerHTML = compteur1
+function incrementScore1() {
+    score_1 = score_1 + 1
+    UpdateScoreTxt()
 }
 
-
-plusdeux.addEventListener("click", function () {
-    plus2()
+bouton2.addEventListener("click", function () {
+    incrementScore2()
 })
 
-function plus2() {
-    compteur2++
-    score2.innerHTML = compteur2
+function incrementScore2() {
+    score_2 = score_2 + 1
+    UpdateScoreTxt()
 }
+
+function UpdateScoreTxt() {
+    score_txt.innerHTML = score_1 + "-" + score_2
+}
+
+// bouton3.addEventListener("click", function () {
+//     changeColor()
+// })
+
+// function changeColor(color) {
+//     document.body.style.background = color;
+
+// }
+
+let switch1 = document.querySelector(".Switch")
+let dark = document.querySelector(".dark")
+
+switch1.addEventListener("click", function () {
+
+            if (document.body.style.backgroundColor(switch1)) {
+                document.body.style.backgroundColor(dark);
+                score1.style.color(switch1);
+
+            } else {
+                document.body.style.backgroundColor(dark);
+                score1.style.color(switch1);
+            }
+
+        }
+
+        // ********************************* Changement d'élément html et css en JavaScript  *********************************
