@@ -182,10 +182,6 @@
 //     B.innerHTML = compteur2
 // }
 
-
-var white = "#FFFFFF";
-var black = "#000000";
-
 let score_txt = document.querySelector(".score")
 let bouton1 = document.querySelector(".Bouton1")
 let bouton2 = document.querySelector(".Bouton2")
@@ -215,29 +211,40 @@ function UpdateScoreTxt() {
     score_txt.innerHTML = score_1 + "-" + score_2
 }
 
-// bouton3.addEventListener("click", function () {
-//     changeColor()
-// })
-
-// function changeColor(color) {
-//     document.body.style.background = color;
-
-// }
-
-let switch1 = document.querySelector(".Switch")
-let dark = document.querySelector(".dark")
+let switch1 = document.querySelector(".dos_switch")
+let cercle = document.querySelector(".cercle_switch")
+let body = document.querySelector(".body1")
 
 switch1.addEventListener("click", function () {
 
-            if (document.body.style.backgroundColor(switch1)) {
-                document.body.style.backgroundColor(dark);
-                score1.style.color(switch1);
+    if (switch1.classList == "dos_switch") {
+        switch1.classList.add("dos_switch2")
+        switch1.classList.remove("dos_switch")
 
-            } else {
-                document.body.style.backgroundColor(dark);
-                score1.style.color(switch1);
-            }
+        cercle.classList.add("cercle_switch2")
+        cercle.classList.remove("cercle_switch")
 
-        }
+        body.classList.add("dark")
+        body.classList.remove("light")
 
-        // ********************************* Changement d'élément html et css en JavaScript  *********************************
+        score_txt.classList.add("text_noir")
+        score_txt.classList.remove("text_blanc")
+
+
+    } else {
+        switch1.classList.add("dos_switch")
+        switch1.classList.remove("dos_switch2")
+
+        cercle.classList.add("cercle_switch")
+        cercle.classList.remove("cercle_switch2")
+
+        body.classList.add("light")
+        body.classList.remove("dark")
+
+        score_txt.classList.add("text_blanc")
+        score_txt.classList.remove("text_noir")
+    }
+})
+
+
+// ********************************* Changement d'élément html et css en JavaScript  *********************************
