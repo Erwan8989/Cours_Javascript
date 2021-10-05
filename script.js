@@ -87,51 +87,66 @@
 
 // ************************* Compteur *************************
 
-let compteur1 = 0,
-  compteur2 = 0
+// let compteur1 = 0,
+//   compteur2 = 0
 
-let score1 = document.querySelector(".score1")
-
-
-let plusun = document.querySelector(".plus")
-let plusdeux = document.querySelector(".plus2")
-
-plusun.addEventListener("click", function () {
-  plus1()
-})
-
-function plus1() {
-  compteur1++
-  update()
-}
+// let score1 = document.querySelector(".score1")
 
 
+// let plusun = document.querySelector(".plus")
+// let plusdeux = document.querySelector(".plus2")
 
-plusdeux.addEventListener("click", function () {
-  plus2()
-})
+// plusun.addEventListener("click", function () {
+//   plus1()
+// })
 
-function plus2() {
-  compteur2++
-  update()
-}
+// function plus1() {
+//   compteur1++
+//   update()
+// }
 
-function update() {
-  score1.innerHTML = compteur1 + " - " + compteur2
-}
+
+
+// plusdeux.addEventListener("click", function () {
+//   plus2()
+// })
+
+// function plus2() {
+//   compteur2++
+//   update()
+// }
+
+// function update() {
+//   score1.innerHTML = compteur1 + " - " + compteur2
+// }
 
 // ************************* Dark mode *************************
 
-let switch1 = document.querySelector(".switch")
+let switch1 = document.querySelector(".dos_switch")
+let cercle = document.querySelector(".cercle_switch")
+let body = document.querySelector(".body1")
 
 switch1.addEventListener("click", function () {
 
-  if (document.body.style.backgroundColor == "black") {
-    document.body.style.backgroundColor = "white";
-    score1.style.color = "black"
+  if (switch1.classList == "dos_switch") {
+    switch1.classList.add("dos_switch2")
+    switch1.classList.remove("dos_switch")
+
+    cercle.classList.add("cercle_switch2")
+    cercle.classList.remove("cercle_switch")
+
+    body.classList.add("dark")
+    body.classList.remove("light")
   } else {
-    document.body.style.backgroundColor = "black";
-    score1.style.color = "white"
+    switch1.classList.add("dos_switch")
+    switch1.classList.remove("dos_switch2")
+
+    cercle.classList.add("cercle_switch")
+    cercle.classList.remove("cercle_switch2")
+
+    body.classList.add("light")
+    body.classList.remove("dark")
   }
+
 
 })
