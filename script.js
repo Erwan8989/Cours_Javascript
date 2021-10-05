@@ -85,11 +85,12 @@
 //   bouton.style.color = "red"
 // }
 
+// ************************* Compteur *************************
+
 let compteur1 = 0,
   compteur2 = 0
 
 let score1 = document.querySelector(".score1")
-let score2 = document.querySelector(".score2")
 
 
 let plusun = document.querySelector(".plus")
@@ -101,7 +102,7 @@ plusun.addEventListener("click", function () {
 
 function plus1() {
   compteur1++
-  score1.innerHTML = compteur1
+  update()
 }
 
 
@@ -112,5 +113,25 @@ plusdeux.addEventListener("click", function () {
 
 function plus2() {
   compteur2++
-  score2.innerHTML = compteur2
+  update()
 }
+
+function update() {
+  score1.innerHTML = compteur1 + " - " + compteur2
+}
+
+// ************************* Dark mode *************************
+
+let switch1 = document.querySelector(".switch")
+
+switch1.addEventListener("click", function () {
+
+  if (document.body.style.backgroundColor == "black") {
+    document.body.style.backgroundColor = "white";
+    score1.style.color = "black"
+  } else {
+    document.body.style.backgroundColor = "black";
+    score1.style.color = "white"
+  }
+
+})
