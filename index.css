@@ -66,3 +66,8 @@
     color: white;
     transition-duration: 1.5s;
 }
+
+.test {
+    display: flex;
+    margin: 10px;
+}
