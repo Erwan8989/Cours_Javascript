@@ -1,0 +1,50 @@
+.dos_switch {
+  margin: 24em auto 0em auto;
+  display: flex;
+  height: 100px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: grey;
+  cursor: pointer;
+}
+
+.cercle_switch {
+  display: flex;
+  margin: auto 0em auto 0.5em;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: white;
+  transition-duration: 0.70s;
+}
+
+.dos_switch2 {
+  margin: 24em auto 0em auto;
+  display: flex;
+  height: 100px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: rgb(52, 115, 151);
+  cursor: pointer;
+}
+
+.cercle_switch2 {
+  display: flex;
+  margin: auto 0em auto 7em;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: white;
+  transition-duration: 0.70s;
+  background-color: rgb(61, 61, 61);
+}
+
+.dark {
+  background-color: black;
+  transition-duration: 1.5s;
+}
+
+.light {
+  background-color: white;
+  transition-duration: 1.5s;
+}
