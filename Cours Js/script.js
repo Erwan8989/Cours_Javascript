@@ -359,44 +359,51 @@ switch1.addEventListener("click", function () {
 
 // // *********************************  Liste de courses 4  *********************************
 
-let saisie_nom = document.querySelector(".nom")
-let saisie_prix = document.querySelector(".prix")
-let btn = document.querySelector(".monBouton")
+let monBouton = document.querySelector(".monBouton")
+let nom_input = document.querySelector(".nom")
+let prix_input = document.querySelector(".prix")
+
 let list = document.querySelector(".maListe")
 
-let courses = []
 
-btn.addEventListener("click", function () {
-    AjouterElement()
+let courses = [];
+
+monBouton.addEventListener("click", function () {
+    AddElement()
 })
 
-function AjouterElement() {
+function AddElement() {
     let produit = {
-        nom: saisie_nom.value,
-        prix: saisie_prix.value
+        nom: nom_input.value,
+        prix: prix_input.value
     }
-
     courses.push(produit)
-    RefreshCourses(courses)
+
+    RefreshCourses();
 }
 
-function RefreshCourses(mesCourses) {
-    list.innerHTML = ""
-    for (let i = 0; i < mesCourses.length; i++) {
-        let monLi = document.createElement("li")
-        monLi.innerHTML = "Produit : " + mesCourses[i].nom + " - Prix : " + mesCourses[i].prix + "€"
-        list.appendChild(monLi)
+function RefreshCourses() {
+    list.innerHTML = "" // récupère le ul et le met a vide
+    for (let i = 0; i < courses.length; i++) {
+        let li = document.createElement("li")
+        li.className = "monLi"
+        li.innerHTML = "Produit : " + courses[i].nom + " - Prix : " + courses[i].prix + "€"
+        list.appendChild(li)
 
-        let suppr_btn = document.createElement("button")
-        suppr_btn.innerHTML = "SUPPRIMER"
-        suppr_btn.addEventListener("click", function () {
-            RetirerElement(mesCourses, i)
+        let delete_btn = document.createElement("button")
+        delete_btn.className = "delete_btn"
+        delete_btn.innerHTML = "SUPPRIMER"
+        li.appendChild(delete_btn)
+        delete_btn.addEventListener("click", function () {
+            RemoveElement(courses[i])
         })
-        monLi.appendChild(suppr_btn)
     }
 }
 
-function RetirerElement(mesCourses, index) {
-    mesCourses.splice(i, 0)
-    RefreshCourses(mesCourses)
+function RemoveElement(monElement) {
+    courses.splice(courses.indexOf(monElement, 1))
+    RefreshCourses()
 }
+
+
+// // *********************************  Liste de courses 4.1  *********************************
