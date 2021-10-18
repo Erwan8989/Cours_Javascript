@@ -145,7 +145,7 @@
 // // console.log("Le dégré " + F + " Fahrenheit est égal à " + C + " degré Celsus")
 
 
-// // ********************************* Changement d'élément html et css en JavaScript  **********************************
+// // **************************************************** Changement d'élément html et css en JavaScript  **********************************
 
 
 
@@ -156,7 +156,7 @@
 // // ma_balise_p.style.fontSize = "30px"
 
 
-// // ********************************* Compteur de points  **********************************
+// // **************************************************** Compteur de points  **********************************
 
 
 // // let compteur1 = 0
@@ -216,7 +216,7 @@ function UpdateScoreTxt() {
 }
 
 
-// // ********************************* Changement couleur de fonds  **********************************
+// // **************************************************** Changement couleur de fonds  ****************************************************
 
 
 
@@ -272,7 +272,7 @@ switch1.addEventListener("click", function () {
 // // }
 
 
-// // ********************************* Liste de courses 1  *********************************
+// // ************************************************************* Liste de courses 1  *********************************************
 
 // // let input = document.querySelector(".saisie")
 // // let btn = document.querySelector(".btn")
@@ -305,7 +305,7 @@ switch1.addEventListener("click", function () {
 
 
 
-// // *********************************  Liste de courses 2 *******************************************
+// // ****************************************************  Liste de courses 2 ********************************************************
 
 
 // // let input_nom = document.querySelector(".saisie_nom")
@@ -329,7 +329,7 @@ switch1.addEventListener("click", function () {
 // // [objet].indexOf // Indique la pistion d'un objet
 
 
-// // *********************************  Liste de courses 3 : script à compléter *********************************
+// // *********************************************  Liste de courses 3 : script à compléter ************************************************
 
 
 // // let course = [{
@@ -357,16 +357,69 @@ switch1.addEventListener("click", function () {
 
 // // ReadCourses(course)
 
-// // *********************************  Liste de courses 4  *********************************
+// // ***********************************************************  Liste de courses 4  *************************************************************
 
+// let monBouton = document.querySelector(".monBouton")
+// let nom_input = document.querySelector(".nom")
+// let prix_input = document.querySelector(".prix")
+
+// let list = document.querySelector(".maListe")
+
+
+// let courses = [];
+
+// monBouton.addEventListener("click", function () {
+//     AddElement()
+// })
+
+// function AddElement() {
+//     let produit = {
+//         nom: nom_input.value,
+//         prix: prix_input.value
+//     }
+//     courses.push(produit)
+
+//     RefreshCourses();
+// }
+
+// function RefreshCourses() {
+//     list.innerHTML = ""                                 // récupère le ul et le met a vide
+//     for (let i = 0; i < courses.length; i++) {
+//         let li = document.createElement("li")
+//         li.className = "monLi"
+//         li.innerHTML = "Produit : " + courses[i].nom + " - Prix : " + courses[i].prix + "€"
+//         list.appendChild(li)
+
+//         let delete_btn = document.createElement("button")
+//         delete_btn.className = "delete_btn"
+//         delete_btn.innerHTML = "SUPPRIMER"
+//         li.appendChild(delete_btn)
+//         delete_btn.addEventListener("click", function () {
+//             RemoveElement(courses[i])
+//         })
+//     }
+// }
+
+// function RemoveElement(monElement) {
+//     courses.splice(courses.indexOf(monElement, 1))
+//     RefreshCourses()
+// }
+
+
+// // **************************************************  Liste de courses 4.1 : Local storage  *******************************************************
 let monBouton = document.querySelector(".monBouton")
 let nom_input = document.querySelector(".nom")
 let prix_input = document.querySelector(".prix")
 
 let list = document.querySelector(".maListe")
-
-
 let courses = [];
+
+let saved_txt = window.localStorage.getItem("courses_saved")
+if (saved_txt) {
+    let saved_obj = JSON.parse(saved_txt)
+    courses = saved_obj
+    RefreshCourses()
+}
 
 monBouton.addEventListener("click", function () {
     AddElement()
@@ -379,11 +432,14 @@ function AddElement() {
     }
     courses.push(produit)
 
+    nom_input.value = ""
+    prix_input.value = ""
+
     RefreshCourses();
 }
 
 function RefreshCourses() {
-    list.innerHTML = "" // récupère le ul et le met a vide
+    list.innerHTML = ""
     for (let i = 0; i < courses.length; i++) {
         let li = document.createElement("li")
         li.className = "monLi"
@@ -395,15 +451,15 @@ function RefreshCourses() {
         delete_btn.innerHTML = "SUPPRIMER"
         li.appendChild(delete_btn)
         delete_btn.addEventListener("click", function () {
-            RemoveElement(courses[i])
+            RemoveElement(i)
         })
     }
+
+    let texte = JSON.stringify(courses)
+    window.localStorage.setItem("courses_saved", texte)
 }
 
-function RemoveElement(monElement) {
-    courses.splice(courses.indexOf(monElement, 1))
+function RemoveElement(index) {
+    courses.splice(index, 1)
     RefreshCourses()
 }
-
-
-// // *********************************  Liste de courses 4.1  *********************************
