@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1>Sasaki<span>.</span></h1>
+            <nav>
+                <ul>
+                    <a href="#"><li class="active">Home</li></a>
+                    <a href="#"><li>About us</li></a>
+                    <a href="#"><li>Our Team</li></a>
+                    <a href="#"><li>Contact us</li></a>
+                </ul>
+            </nav>
+            <ion-icon name="menu-outline"></ion-icon>
+        </header>
+        
+        <main>
+            <h2 class="hero">Sasaki Haise</h2>
+            <section class="anime-container">
+                <article class="container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </article>
+            </section>
+
+            <section class="card-container">
+                <div class="card">
+                    <div class="img1">
+                        <img src="./assets/img/akaashi.jpg" alt="">
+                    </div>
+                    <div class="img2">
+                        <img src="./assets/img/akaashi.jpg" alt="">
+                    </div>
+                    <h3>Keiji Akaashi</h3>
+                </div>
+                <div class="card">
+                    <div class="img1">
+                        <img src="./assets/img/miya.jpg" alt="">
+                    </div>
+                    <div class="img2">
+                        <img src="./assets/img/miya.jpg" alt="">
+                    </div>
+                    <h3>Atsumu Miya</h3>
+                </div>
+                <div class="card">
+                    <div class="img1">
+                        <img src="./assets/img/sakusa.jpg" alt="">
+                    </div>
+                    <div class="img2">
+                        <img src="./assets/img/sakusa.jpg" alt="">
+                    </div>
+                    <h3>Sakusa Kiyoomi</h3>
+                </div>
+                <div class="card">
+                    <div class="img1">
+                        <img src="./assets/img/ushijima.jpg" alt="">
+                    </div>
+                    <div class="img2">
+                        <img src="./assets/img/ushijima.jpg" alt="">
+                    </div>
+                    <h3>Ushijima Wakatoshi</h3>
+                </div>
+            </section>
+        </main>
+        <script src="./assets/js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.18.0/core.min.js"
+            integrity="sha512-XpSfIIupzvkhza/hT76X11BXXysUeg/bTeTB/Obn+8U2x3Ul12Kb071BBL3zUV8JL7G7YOooKVhjJeolBcUtOQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            let tl = anime.timeline({
+                easing: 'easeOutExpo',
+                duration: 750,
+            })
+            tl.add({
+                targets: 'article div',
+                backgroundColor: '#faaf38',
+                width: '100%',
+                delay: anime.stagger(100)
+            })
+            tl.add({
+                targets: 'article div',
+                opacity: .5,
+                marginRight: '.5rem',
+                delay: anime.stagger(100)
+            })
+            tl.add({
+                targets: 'h2',
+                opacity: 1,
+                translateY: '-200%',
+                duration: 4000,
+            },'-=1600')
+            
+            window.addEventListener('scroll',() => {
+                let degrees = Math.trunc(window.scrollY - window.scrollY * 0.9);
+                // let scales = Math.abs(Math.trunc(1 + window.scrollY - (window.scrollY * 90 / 100)));
+                // if (scales > 2) {
+                //     scales = 2;
+                // }
+                let rotating = anime({
+                    targets: '.anime-container',
+                    // scaleX: scales,
+                    // scaleY: scales,
+                    rotate: degrees,
+                    easing: 'easeOutExpo',
+                    duration: 750,
+                    autoplay: false,
+                })
+                rotating.play()
+            })
+            let qualities = ['Powerful','Beautiful','Aesthetic','Fast','Incredible','Manga Fans'];
+            let writing = new Typewriter('.hero', {
+                loop: true,
+                delay: 75,
+            })
+            for (let i = 0; i < qualities.length; i++) {
+                writing
+                    .pauseFor(2500)
+                    .typeString(qualities[i])
+                    .pauseFor(800)
+                    .deleteAll()
+                    .pauseFor(500)
+                    .start();
+            }
+            // name.addEventListener('mouseleave',() => {
+            //     console.log('test2')
+            //     rotating.reverse()
+            // })
+            // let grids = document.querySelectorAll('article div');
+            // let num = 0;
+            // const delay = time => new Promise(resolve => setTimeout(resolve, time));
+
+            // grids.forEach(grid => {
+            //     delay(0).then(() => {
+            //         setTimeout(() => {
+            //             grid.style.backgroundColor = '#faaf38';
+            //         }, num += 100);
+            //     })
+            //     delay(500).then(() => {
+            //         setTimeout(() => {
+            //             grid.style.backgroundColor = '#efdacc';
+            //         }, num += 100);
+            //     })
+            // })
+        </script>
+    </body>
+</html>
