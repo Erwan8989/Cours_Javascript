@@ -1,6 +1,5 @@
 // // alert("Hello World")
 
-
 // // let prenom = "John"
 // // let nom = "Doe"
 // // let age = 43
@@ -19,7 +18,6 @@
 // //   alert ("tu es enfant")
 // // }
 
-
 // // ******************************************* Exo 1 ***********************************************
 
 // // let prix = prompt("Quel est le prix de la PS5 ?")
@@ -34,12 +32,10 @@
 // //   alert ("C'est une bonne affaire :)")
 // // }
 
-
 // // let age = prompt("Saisissez votre âge")
 // // alert ("vous avez " + age + " ans")
 
 // // ******************************************* Exo 2 ***********************************************
-
 
 // // let nm = 53
 // // let compteur = 0
@@ -62,9 +58,7 @@
 // //  compteur++
 // // }
 
-
 // // // ******************************************* Exo 2 ***********************************************
-
 
 // // let devinette
 // // let age = 18
@@ -86,8 +80,6 @@
 // // }
 
 // // alert("Bravo, vous avez deviné l'âge en " + i + " essai(s)")
-
-
 
 // // **********************************  Même exo avec un chiffre en aléatoire : ******************************
 
@@ -111,7 +103,6 @@
 
 // // ******************************************** Fonction ************************************************
 
-
 // // function Multiplier(nombre1, nombre2) {
 // //     let resultat = nombre1 * nombre2
 // //     return resultat
@@ -120,8 +111,6 @@
 // //    console.log(nombre)
 
 // // ********************************* fonction pour convertir les degrés Fahrenheit en degrés Celsius.  **********************************
-
-
 
 // // function Conversion(Fahrenheit) {
 // //     let conversion = (Fahrenheit - 32) * 5 / 9
@@ -133,7 +122,6 @@
 
 // // ******************************************* V2 ***********************************************
 
-
 // // let F = prompt("Entrez le degré Fahrenheit que vous souhaitez convertir")
 
 // // function Convertion(F) {
@@ -144,20 +132,14 @@
 // // let C = Convertion(F)
 // // console.log("Le dégré " + F + " Fahrenheit est égal à " + C + " degré Celsus")
 
-
 // // **************************************************** Changement d'élément html et css en JavaScript  **********************************
-
-
-
 
 // // let ma_balise_p = document.querySelector(".MonTexte")
 // // ma_balise_p.innerHTML = "Coucou"
 // // ma_balise_p.style.color = "red"
 // // ma_balise_p.style.fontSize = "30px"
 
-
 // // **************************************************** Compteur de points  **********************************
-
 
 // // let compteur1 = 0
 // // let compteur2 = 0
@@ -186,75 +168,68 @@
 // //     B.innerHTML = compteur2
 // // }
 
-let score_txt = document.querySelector(".score")
-let bouton1 = document.querySelector(".Bouton1")
-let bouton2 = document.querySelector(".Bouton2")
+let score_txt = document.querySelector(".score");
+let bouton1 = document.querySelector(".Bouton1");
+let bouton2 = document.querySelector(".Bouton2");
 
-let score_1 = 0
-let score_2 = 0
+let score_1 = 0;
+let score_2 = 0;
 
 bouton1.addEventListener("click", function () {
-    incrementScore1()
-})
+  incrementScore1();
+});
 
 function incrementScore1() {
-    score_1 = score_1 + 1
-    UpdateScoreTxt()
+  score_1 = score_1 + 1;
+  UpdateScoreTxt();
 }
 
 bouton2.addEventListener("click", function () {
-    incrementScore2()
-})
+  incrementScore2();
+});
 
 function incrementScore2() {
-    score_2 = score_2 + 1
-    UpdateScoreTxt()
+  score_2 = score_2 + 1;
+  UpdateScoreTxt();
 }
 
 function UpdateScoreTxt() {
-    score_txt.innerHTML = score_1 + "-" + score_2
+  score_txt.innerHTML = score_1 + "-" + score_2;
 }
-
 
 // // **************************************************** Changement couleur de fonds  ****************************************************
 
-
-
-let switch1 = document.querySelector(".dos_switch")
-let cercle = document.querySelector(".cercle_switch")
-let body = document.querySelector(".body1")
+let switch1 = document.querySelector(".dos_switch");
+let cercle = document.querySelector(".cercle_switch");
+let body = document.querySelector(".body1");
 
 switch1.addEventListener("click", function () {
+  if (switch1.classList == "dos_switch") {
+    switch1.classList.add("dos_switch2");
+    switch1.classList.remove("dos_switch");
 
-    if (switch1.classList == "dos_switch") {
-        switch1.classList.add("dos_switch2")
-        switch1.classList.remove("dos_switch")
+    cercle.classList.add("cercle_switch2");
+    cercle.classList.remove("cercle_switch");
 
-        cercle.classList.add("cercle_switch2")
-        cercle.classList.remove("cercle_switch")
+    body.classList.add("dark");
+    body.classList.remove("light");
 
-        body.classList.add("dark")
-        body.classList.remove("light")
+    score_txt.classList.add("text_noir");
+    score_txt.classList.remove("text_blanc");
+  } else {
+    switch1.classList.add("dos_switch");
+    switch1.classList.remove("dos_switch2");
 
-        score_txt.classList.add("text_noir")
-        score_txt.classList.remove("text_blanc")
+    cercle.classList.add("cercle_switch");
+    cercle.classList.remove("cercle_switch2");
 
+    body.classList.add("light");
+    body.classList.remove("dark");
 
-    } else {
-        switch1.classList.add("dos_switch")
-        switch1.classList.remove("dos_switch2")
-
-        cercle.classList.add("cercle_switch")
-        cercle.classList.remove("cercle_switch2")
-
-        body.classList.add("light")
-        body.classList.remove("dark")
-
-        score_txt.classList.add("text_blanc")
-        score_txt.classList.remove("text_noir")
-    }
-})
-
+    score_txt.classList.add("text_blanc");
+    score_txt.classList.remove("text_noir");
+  }
+});
 
 // // let monInput = document.querySelector(".monInput")
 // // let monBouton = document.querySelector(".monBouton")
@@ -270,7 +245,6 @@ switch1.addEventListener("click", function () {
 // //     maListe.appendChild(element)
 // //     monInput.value = ""
 // // }
-
 
 // // ************************************************************* Liste de courses 1  *********************************************
 
@@ -303,10 +277,7 @@ switch1.addEventListener("click", function () {
 // //     liste.removeChild(element_a_suppr)
 // // }
 
-
-
 // // ****************************************************  Liste de courses 2 ********************************************************
-
 
 // // let input_nom = document.querySelector(".saisie_nom")
 // // let input_prix = document.querySelector(".saisie_prix")
@@ -328,9 +299,7 @@ switch1.addEventListener("click", function () {
 // // [objet].push // Mise dans le tableau
 // // [objet].indexOf // Indique la pistion d'un objet
 
-
 // // *********************************************  Liste de courses 3 : script à compléter ************************************************
-
 
 // // let course = [{
 // //     nom: "Tomates",
@@ -364,7 +333,6 @@ switch1.addEventListener("click", function () {
 // let prix_input = document.querySelector(".prix")
 
 // let list = document.querySelector(".maListe")
-
 
 // let courses = [];
 
@@ -405,61 +373,61 @@ switch1.addEventListener("click", function () {
 //     RefreshCourses()
 // }
 
-
 // // **************************************************  Liste de courses 4.1 : Local storage  *******************************************************
-let monBouton = document.querySelector(".monBouton")
-let nom_input = document.querySelector(".nom")
-let prix_input = document.querySelector(".prix")
+let monBouton = document.querySelector(".monBouton");
+let nom_input = document.querySelector(".nom");
+let prix_input = document.querySelector(".prix");
 
-let list = document.querySelector(".maListe")
+let list = document.querySelector(".maListe");
 let courses = [];
 
-let saved_txt = window.localStorage.getItem("courses_saved")
+let saved_txt = window.localStorage.getItem("courses_saved");
 if (saved_txt) {
-    let saved_obj = JSON.parse(saved_txt)
-    courses = saved_obj
-    RefreshCourses()
+  let saved_obj = JSON.parse(saved_txt);
+  courses = saved_obj;
+  RefreshCourses();
 }
 
 monBouton.addEventListener("click", function () {
-    AddElement()
-})
+  AddElement();
+});
 
 function AddElement() {
-    let produit = {
-        nom: nom_input.value,
-        prix: prix_input.value
-    }
-    courses.push(produit)
+  let produit = {
+    nom: nom_input.value,
+    prix: prix_input.value,
+  };
+  courses.push(produit);
 
-    nom_input.value = ""
-    prix_input.value = ""
+  nom_input.value = "";
+  prix_input.value = "";
 
-    RefreshCourses();
+  RefreshCourses();
 }
 
 function RefreshCourses() {
-    list.innerHTML = ""
-    for (let i = 0; i < courses.length; i++) {
-        let li = document.createElement("li")
-        li.className = "monLi"
-        li.innerHTML = "Produit : " + courses[i].nom + " - Prix : " + courses[i].prix + "€"
-        list.appendChild(li)
+  list.innerHTML = "";
+  for (let i = 0; i < courses.length; i++) {
+    let li = document.createElement("li");
+    li.className = "monLi";
+    li.innerHTML =
+      "Produit : " + courses[i].nom + " - Prix : " + courses[i].prix + "€";
+    list.appendChild(li);
 
-        let delete_btn = document.createElement("button")
-        delete_btn.className = "delete_btn"
-        delete_btn.innerHTML = "SUPPRIMER"
-        li.appendChild(delete_btn)
-        delete_btn.addEventListener("click", function () {
-            RemoveElement(i)
-        })
-    }
+    let delete_btn = document.createElement("button");
+    delete_btn.className = "delete_btn";
+    delete_btn.innerHTML = "SUPPRIMER";
+    li.appendChild(delete_btn);
+    delete_btn.addEventListener("click", function () {
+      RemoveElement(i);
+    });
+  }
 
-    let texte = JSON.stringify(courses)
-    window.localStorage.setItem("courses_saved", texte)
+  let texte = JSON.stringify(courses);
+  window.localStorage.setItem("courses_saved", texte);
 }
 
 function RemoveElement(index) {
-    courses.splice(index, 1)
-    RefreshCourses()
+  courses.splice(index, 1);
+  RefreshCourses();
 }
