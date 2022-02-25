@@ -10,34 +10,67 @@ body {
   margin: auto;
   display: flex;
   position: relative;
+  margin: 2rem 2rem;
 }
 
 .section1 {
-  width: 29%;
-  position: fixed;
-
   box-shadow: 0 1px 4px rgb(186 161 176 / 20%);
 }
 
 .section_data {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px 20px;
+  line-height: 40px;
 }
 
+button {
+  font-size: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #4592c4;
+  color: rgb(238, 184, 168);
+  transition: 0.3s;
+}
+
+input {
+  width: 15rem;
+}
+
+.typePoke {
+  width: 15.5rem;
+}
 .section_second {
   background-color: aliceblue;
   margin: 2.5rem 0;
   flex-shrink: 0;
 }
 
+.section_title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 20px 20px;
+}
+
+.pokeball {
+  width: 5rem;
+  height: 5rem;
+  padding: 2.5rem;
+}
+
 .section2 {
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 6fr);
-  width: 75%;
-  height: 55%;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-self: center;
   justify-items: center;
-  margin: 10em 30em;
   border-radius: 25px;
 }
 
@@ -99,4 +132,111 @@ body {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.2s;
+}
+
+@media screen and (max-width: 1430px) {
+  .section2 {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-self: center;
+    justify-items: center;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    display: block;
+  }
+  .section1 {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .section2 {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    align-items: center;
+    justify-self: center;
+    justify-items: center;
+    border-radius: 25px;
+  }
+}
+
+/* Couleurs */
+
+.insecte {
+  background-color: #729f3f;
+}
+
+.dragon {
+  background-color: rgb(151, 6, 6);
+}
+
+.fée {
+  background-color: #fdb9e9;
+}
+
+.feu {
+  background-color: #fd7d24;
+}
+
+.spectre {
+  background-color: #7b62a3;
+}
+
+.sol {
+  background-color: #ab9842;
+}
+
+.normal {
+  background-color: #a4acaf;
+}
+
+.psy {
+  background-color: #f366b9;
+}
+
+.acier {
+  background-color: #9eb7b8;
+}
+
+.ténèbres {
+  background-color: #707070;
+}
+
+.électrik {
+  background-color: #eed535;
+}
+
+.combat {
+  background-color: #d56723;
+}
+
+.vol {
+  background-color: #89d4d6;
+}
+
+.plante {
+  background-color: #9bcc50;
+}
+
+.glace {
+  background-color: #51c4e7;
+}
+
+.poison {
+  background-color: #b97fc9;
+}
+
+.roche {
+  background-color: #a38c21;
+}
+
+.eau {
+  background-color: #4592c4;
 }
