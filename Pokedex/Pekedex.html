@@ -11,38 +11,51 @@
 
 <body>
 
-    <form class="form">
-        <header class="form-head">
-            <div class="form-fields">
-                <div class="field">
-                    <label for="lname" class="field-label">Nom du pokemon</label>
-                    <input id="nom" class="field-input" type="text">
-                </div>
-                <div class="field">
-                    <label for="fname" class="field-label">Type du pokemon</label>
-                    <input id="type" class="field-input" type="text">
-                </div>
-                <div class="field">
-                    <label for="fname" class="field-label">Url du pokemon</label>
-                    <input id="url" class="field-input" type="text">
-                </div>
+<div class="container">
 
-                <!-- <div class="field"> -->
-                <button class="monBouton">How's that pokemon ?!</button>
-                <!-- </div> -->
-        </header>
+    <section class="section_first">
+        <div class="section_elements">
+            <div class="section_data">
+                <label for="nomPoke">Nom du Pokemon :</label>
+				<br><br>
+				<input type="text" name="nomPoke" class="nomPoke">
+            </div>
+            <div class="section_data">
+                <label for="typePoke">Type du Pokemon :</label>
+				<br><br>
+				<select name="typePoke" class="typePoke">
+					<option value="">-- options de type :</option>
+					<option class="insecte" value="insecte">insecte</option>
+					<option class="dragon" value="dragon">dragon</option>
+					<option class="fée" value="fée">fée</option>
+					<option class="feu" value="feu">feu</option>
+					<option class="spectre" value="spectre">spectre</option>
+					<option class="sol" value="sol">sol</option>
+					<option class="normal" value="normal">normal</option>
+					<option class="psy" value="psy">psy</option>
+					<option class="acier" value="acier">acier</option>
+					<option class="ténèbres" value="ténèbres">ténèbres</option>
+					<option class="électrik" value="électrik">électrik</option>
+					<option class="combat" value="combat">combat</option>
+					<option class="vol" value="vol">vol</option>
+					<option class="plante" value="plante">plante</option>
+					<option class="glace" value="glace">glace</option>
+					<option class="poison" value="poison">poison</option>
+					<option class="roche" value="roche">roche</option>
+					<option class="eau" value="eau">eau</option>
+				</select></div>
+            <div class="section_data">
+                <label for="imgPoke">URL de l'image du Pokemon :</label>
+				<br><br>
+				<input type="text" name="imgPoke" class="imgPoke">
+            </div>
+            <div class="section_data">
+                <button class="button">Ajouter au Pokedex</button>
+            </div>
+        </div>
+    </section>
 
-    </form>
-
-    <form class="form">
-        <header class="form-head">
-            <div id="container_pokemon" class="card">
-                <div class="info">
-
-                </div>
-
-        </header>
-    </form>
+</div>
 
 
     <script src="Pokedex.js"> </script>
