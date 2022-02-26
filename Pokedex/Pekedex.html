@@ -18,14 +18,16 @@
             <h1 class="_title">Pokedex <br> Pokemon</h1>
             <img src="./pokeball.png" class="pokeball" alt="Pokeball">
         </div>
+
+        <div class="section_info">
             <div class="section_data">
-                <label for="nomPoke">Nom du Pokemon :</label>
-				<input type="text" name="nomPoke" class="nomPoke">
+                <label for="nomPoke" class="section_label">Nom du Pokemon :</label>
+				<input type="text" name="nomPoke" id="nomPoke" class="section_input">
             </div>
             <div class="section_data">
-                <label for="typePoke">Type du Pokemon :</label>
-				<select name="typePoke" class="typePoke">
-					<option value="">-- options de type :</option>
+                <label for="typePoke" class="section_label">Type du Pokemon :</label>
+				<select name="typePoke" id="typePoke" class="section_input">
+					<option value=""></option>
 					<option class="insecte" value="insecte">insecte</option>
 					<option class="dragon" value="dragon">dragon</option>
 					<option class="fée" value="fée">fée</option>
@@ -46,12 +48,13 @@
 					<option class="eau" value="eau">eau</option>
 				</select></div>
             <div class="section_data">
-                <label for="imgPoke">URL de l'image :</label>
-				<input type="text" name="imgPoke" class="imgPoke">
+                <label for="imgPoke" class="section_label">URL de l'image :</label>
+				<input type="text" name="imgPoke" id="imgPoke" class="section_input">
             </div>
             <div class="section_data">
                 <button class="button">Ajouter au Pokedex</button>
             </div>
+        </div>
     </div>
 
     <div class="section2">
