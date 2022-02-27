@@ -1,8 +1,8 @@
-let nom = document.querySelector(".nomPoke");
-let type = document.querySelector(".typePoke");
-let url = document.querySelector(".imgPoke");
-let bouton = document.querySelector(".bouton");
-let carte = document.querySelector(".content_container");
+let nom = document.getElementById(".nomPoke");
+let type = document.getElementById(".typePoke");
+let url = document.getElementById(".imgPoke");
+let bouton = document.getElementById(".btnPoke");
+let carte = document.getElementById(".contentPoke");
 
 let pokedex = [];
 
@@ -13,9 +13,11 @@ if (save) {
   RefreshPokedex();
 }
 
-bouton.addEventListener("click", function () {
-  add();
-});
+if (bouton) {
+  bouton.addEventListener("click", function () {
+    add();
+  });
+}
 
 function add() {
   let infos = {
@@ -23,6 +25,7 @@ function add() {
     type: type.value,
     url: url.value,
   };
+
   pokedex.push(infos);
 
   nom.value = "";
@@ -34,6 +37,7 @@ function add() {
 
 function RefreshPokedex() {
   carte.innerHTML = "";
+
   for (let i = 0; i < pokedex.length; i++) {
     let div = document.createElement("div");
     carte.appendChild(div);
