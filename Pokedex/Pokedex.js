@@ -1,8 +1,8 @@
-let nom = document.getElementById(".nomPoke");
-let type = document.getElementById(".typePoke");
-let url = document.getElementById(".imgPoke");
-let bouton = document.getElementById(".btnPoke");
-let carte = document.getElementById(".contentPoke");
+let nom = document.querySelector(".nomPokemon");
+let type = document.querySelector(".typePokemon");
+let url = document.querySelector(".urlPokemon");
+let bouton = document.querySelector(".bouton");
+let carte = document.querySelector(".content_card");
 
 let pokedex = [];
 
@@ -13,11 +13,9 @@ if (save) {
   RefreshPokedex();
 }
 
-if (bouton) {
-  bouton.addEventListener("click", function () {
-    add();
-  });
-}
+bouton.addEventListener("click", function () {
+  add();
+});
 
 function add() {
   let infos = {
@@ -68,72 +66,10 @@ function RefreshPokedex() {
     delete_btn.addEventListener("click", function () {
       RemoveElement(i);
     });
-
-    // if (pokedex[i].type == "Feu" || pokedex[i].type == "feu") {
-    //   div.className = "carte bloc feu col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Plante" || pokedex[i].type == "plante") {
-    //   div.className = "carte bloc plante col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Acier" || pokedex[i].type == "acier") {
-    //   div.className = "carte bloc acier col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Combat" || pokedex[i].type == "combat") {
-    //   div.className = "carte bloc combat col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Dragon" || pokedex[i].type == "dragon") {
-    //   div.className = "carte bloc dragon col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Eau" || pokedex[i].type == "eau") {
-    //   div.className = "carte bloc eau col-6";
-    //   carte.className = "row";
-    // } else if (
-    //   pokedex[i].type == "Electrique" ||
-    //   pokedex[i].type == "electrique"
-    // ) {
-    //   div.className = "carte bloc electrique col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Fée" || pokedex[i].type == "fée") {
-    //   div.className = "carte bloc fee col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Glace" || pokedex[i].type == "glace") {
-    //   div.className = "carte bloc glace col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Insecte" || pokedex[i].type == "insecte") {
-    //   div.className = "carte bloc insecte col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Poison" || pokedex[i].type == "poison") {
-    //   div.className = "carte bloc poison col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Normal" || pokedex[i].type == "normal") {
-    //   div.className = "carte bloc normal col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Psy" || pokedex[i].type == "psy") {
-    //   div.className = "carte bloc psy col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Roche" || pokedex[i].type == "roche") {
-    //   div.className = "carte bloc roche col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Sol" || pokedex[i].type == "sol") {
-    //   div.className = "carte bloc sol col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Spectre" || pokedex[i].type == "spectre") {
-    //   div.className = "carte bloc spectre col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Tenebre" || pokedex[i].type == "tenebre") {
-    //   div.className = "carte bloc tenebre col-6";
-    //   carte.className = "row";
-    // } else if (pokedex[i].type == "Vol" || pokedex[i].type == "vol") {
-    //   div.className = "carte bloc vol col-6";
-    //   carte.className = "row";
-    // } else {
-    //   div.className = "carte bloc white col-6";
-    //   carte.className = "row";
-    // }
   }
 
   if (pokedex.length == 0) {
-    carte.className = "carte";
+    carte.className = "content_card";
   }
 
   let texte = JSON.stringify(pokedex);
@@ -144,3 +80,65 @@ function RemoveElement(index) {
   pokedex.splice(index, 1);
   RefreshPokedex();
 }
+
+// if (pokedex[i].type == "Feu" || pokedex[i].type == "feu") {
+//   div.className = "carte bloc feu col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Plante" || pokedex[i].type == "plante") {
+//   div.className = "carte bloc plante col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Acier" || pokedex[i].type == "acier") {
+//   div.className = "carte bloc acier col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Combat" || pokedex[i].type == "combat") {
+//   div.className = "carte bloc combat col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Dragon" || pokedex[i].type == "dragon") {
+//   div.className = "carte bloc dragon col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Eau" || pokedex[i].type == "eau") {
+//   div.className = "carte bloc eau col-6";
+//   carte.className = "row";
+// } else if (
+//   pokedex[i].type == "Electrique" ||
+//   pokedex[i].type == "electrique"
+// ) {
+//   div.className = "carte bloc electrique col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Fée" || pokedex[i].type == "fée") {
+//   div.className = "carte bloc fee col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Glace" || pokedex[i].type == "glace") {
+//   div.className = "carte bloc glace col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Insecte" || pokedex[i].type == "insecte") {
+//   div.className = "carte bloc insecte col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Poison" || pokedex[i].type == "poison") {
+//   div.className = "carte bloc poison col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Normal" || pokedex[i].type == "normal") {
+//   div.className = "carte bloc normal col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Psy" || pokedex[i].type == "psy") {
+//   div.className = "carte bloc psy col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Roche" || pokedex[i].type == "roche") {
+//   div.className = "carte bloc roche col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Sol" || pokedex[i].type == "sol") {
+//   div.className = "carte bloc sol col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Spectre" || pokedex[i].type == "spectre") {
+//   div.className = "carte bloc spectre col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Tenebre" || pokedex[i].type == "tenebre") {
+//   div.className = "carte bloc tenebre col-6";
+//   carte.className = "row";
+// } else if (pokedex[i].type == "Vol" || pokedex[i].type == "vol") {
+//   div.className = "carte bloc vol col-6";
+//   carte.className = "row";
+// } else {
+//   div.className = "carte bloc white col-6";
+//   carte.className = "row";
+// }
